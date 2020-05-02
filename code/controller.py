@@ -74,10 +74,10 @@ def main():
                        unemployment_path='../data/ca_unemp.csv',
                        income_path='../data/cali_hourly_wages.csv')
     cali_eco.get_data()
-    # cali_eco.print_data(xlabel='months', 
-    #                     ylabel='data',
-    #                     title='prices',
-    #                     fig_path='../data/figures/income.png')
+    cali_eco.print_data(xlabel='months', 
+                        ylabel='data',
+                        title='prices',
+                        fig_path='../data/figures/income.png')
 
     # making NO data and making figures
     # loisianna_stocks = make_la_data()

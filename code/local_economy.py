@@ -13,24 +13,28 @@ class Economy:
 
     def edit_data(self):
         # editing the unemployment data
+        print(self.start)
         self.income_data.rename(columns={ self.income_data.columns[-1]: 'hourly rate'}, 
                                 inplace=True)
+        self.income_data['year'] = self.income_data['DATE'].apply(lambda x: x[:4])
+        self.income_data = self.income_data[self.income_data['year'] == self.start]
         self.income_data.set_index('DATE', inplace=True)
+        self.income_data.pop('year')
 
         # editing the unemployment dataframe
+        self.unemployment_data['year'] = self.unemployment_data['DATE'].apply(lambda x: x[:4])
+        self.unemployment_data = self.unemployment_data[self.unemployment_data['year'] == self.start[:4]]
         self.unemployment_data.set_index('DATE', inplace=True)
+        self.unemployment_data.pop('year')
 
     # getting the data for the 
     def get_data(self):
         self.unemployment_data = pd.read_csv(self.unemployment_path)
         self.income_data = pd.read_csv(self.income_path)
-        print()
-        self.edit_data() # editing the data
+        # editing the data
+        self.edit_data() 
         print(self.income_data.head())
-        print()
         print(self.unemployment_data.head())
-
-
 
     # printing the data
     def print_data(self, xlabel, ylabel, title, fig_path):
