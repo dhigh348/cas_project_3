@@ -1,5 +1,6 @@
 from compare_local import CompareLocal
 from data_analyzer import DataAnalyzer
+from local_economy import Economy
 import pandas as pd
 
 # checking if the data contains na values
@@ -67,9 +68,20 @@ def main():
     cali_stock = make_cali_data()
     make_graphs(cali_stock)
 
+    # check california economy
+    cali_eco = Economy(start='2018',
+                       end='2019',
+                       unemployment_path='../data/ca_unemp.csv',
+                       income_path='../data/cali_hourly_wages.csv')
+    cali_eco.get_data()
+    # cali_eco.print_data(xlabel='months', 
+    #                     ylabel='data',
+    #                     title='prices',
+    #                     fig_path='../data/figures/income.png')
+
     # making NO data and making figures
-    loisianna_stocks = make_la_data()
-    make_la_figs(loisianna_stocks)
+    # loisianna_stocks = make_la_data()
+    # make_la_figs(loisianna_stocks)
 
 # running the function
 if __name__ == "__main__":
