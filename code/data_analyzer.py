@@ -23,5 +23,6 @@ class DataAnalyzer:
         plt.xlabel(xlabel, fontsize=14)
         plt.ylabel(ylabel, fontsize=14)
         plt.title(title, fontsize=16)
+        plt.xticks(labels=list(d.index), rotation=20)
         plt.legend(loc=(1.04,0))
         plt.savefig(path)

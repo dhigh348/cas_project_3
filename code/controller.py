@@ -61,6 +61,13 @@ def make_la_figs(stock_data):
                  'stock data', 
                  'Stock Data',
                  '../data/figures/no_mean.png')
+    
+def make_ca_eco():
+    # check california economy
+    cali_eco = Economy('2018', '2019')
+    data = cali_eco.load_data(path='../data/ca_unemp.csv', wages=False)
+    data['wages'] = cali_eco.load_data(path='../data/cali_hourly_wages.csv', wages=True)
+    cali_eco.make_graph(data)
 
 # main function to run the program
 def main():
@@ -69,15 +76,7 @@ def main():
     make_graphs(cali_stock)
 
     # check california economy
-    cali_eco = Economy(start='2018',
-                       end='2019',
-                       unemployment_path='../data/ca_unemp.csv',
-                       income_path='../data/cali_hourly_wages.csv')
-    cali_eco.get_data()
-    cali_eco.print_data(xlabel='months', 
-                        ylabel='data',
-                        title='prices',
-                        fig_path='../data/figures/income.png')
+    make_ca_eco()
 
     # making NO data and making figures
     # loisianna_stocks = make_la_data()
