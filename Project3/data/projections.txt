@@ -1,0 +1,35 @@
+Hurricane Katrina Decrease
+max data value:    0.669684884288415
+min data value:    0.3581183151531422
+max data location: 146
+min data location: 207
+rate = -0.005107648674348734
+
+Hurricane Katrina Increase
+max data value:    0.6613874678059146
+min data value:    0.3581183151531422
+max data location: 227
+min data location: 207
+rate = 0.015163457632638622
+
+Covid-19 decrease
+max data value:    0.8331313182119502
+min data value:    0.11333231223252936
+max data location: 197
+min data location: 222
+rate = -0.028791960239176833
+
+Covid-19 increase
+max data value:    0.6135954881276594
+min data value:    0.11333231223252936
+max data location: 240
+min data location: 222
+rate = 0.02779239866084056
+
+Covid-19 groth before
+max data value:    0.8331313182119502
+min data value:    0.3615573699218874
+max data location: 197
+min data location: 18
+rate = 0.0026344913312294008
+
